@@ -14,7 +14,7 @@ class WebTestCase(unittest.TestCase):
         options = webdriver.ChromeOptions()
         options.add_experimental_option("detach", True)
         cls.driver = webdriver.Chrome(options=options)
-        cls.driver.get('https://backoffice-staging.hr-impact.co/login')
+        cls.driver.get('https://dev.backoffice.hr-impact.co/')
         cls.driver.set_window_size(1600, 1000)
         cls.driver.implicitly_wait(15)
 

@@ -12,14 +12,14 @@ from selenium.common.exceptions import NoSuchElementException,TimeoutException
 
 def delete_event(driver):
         
-        driver.get('https://backoffice-staging.hr-impact.co/events')
+        driver.get('https://dev.backoffice.hr-impact.co/events')
         driver.implicitly_wait(10)
         time.sleep(0.5)
 
         result = None
         try: 
 
-            Url =  driver.current_url == 'https://backoffice-staging.hr-impact.co/events'
+            Url =  driver.current_url == 'https://dev.backoffice.hr-impact.co/events'
             if Url:
                 print('URL Show on page : Pass')
             else:

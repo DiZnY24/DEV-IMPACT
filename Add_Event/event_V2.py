@@ -17,11 +17,11 @@ def add_event(driver):
     result = None
     try: 
 
-        driver.get('https://backoffice-staging.hr-impact.co/events')
+        driver.get('https://dev.backoffice.hr-impact.co/events')
         driver.implicitly_wait(10)
         time.sleep(0.3)
 
-        Url =  driver.current_url == 'https://backoffice-staging.hr-impact.co/events'
+        Url =  driver.current_url == 'https://dev.backoffice.hr-impact.co/events'
         if Url:
             print('URL Show on page : Pass')
         else:
