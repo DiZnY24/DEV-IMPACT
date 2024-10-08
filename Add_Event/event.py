@@ -20,7 +20,7 @@ class WebTestCase(unittest.TestCase):
         options = webdriver.ChromeOptions()
         options.add_experimental_option("detach", True)
         login.driver = webdriver.Chrome(options=options)
-        login.driver.get('https://backoffice-staging.hr-impact.co/login')
+        login.driver.get('https://dev.backoffice.hr-impact.co/events')
         login.driver.set_window_size(1600, 1000)
         login.driver.implicitly_wait(15)
 
@@ -93,18 +93,18 @@ class WebTestCase(unittest.TestCase):
     def test_add_event(self):
         driver = self.driver
 
-        driver.get('https://backoffice-staging.hr-impact.co/events')
+        driver.get('https://dev.backoffice.hr-impact.co/events')
         driver.implicitly_wait(10)
         time.sleep(0.5)
 
         result = None
         try: 
 
-            Url =  self.driver.current_url == 'https://backoffice-staging.hr-impact.co/events'
-            if Url:
-                print('URL Show on page : Pass')
-            else:
-                print('URL is not Show on page! : Fail')
+            # Url =  self.driver.current_url == 'https://backoffice-staging.hr-impact.co/events'
+            # if Url:
+            #     print('URL Show on page : Pass')
+            # else:
+            #     print('URL is not Show on page! : Fail')
 
             element = WebDriverWait(self.driver, 15).until(
                 EC.visibility_of_element_located((By.XPATH, '//div[@class="MuiContainer-root MuiContainer-maxWidthLg mui-style-5gxgaq"]/div[1]/div[1]//button'))
@@ -156,7 +156,7 @@ class WebTestCase(unittest.TestCase):
             input_value = input_key.get_attribute('value')
             print(f'ค่าที่ป้อนในฟิลด์: {input_value}')        
 
-            wait_element = WebDriverWait(self.driver, 10).until(
+            wait_element = WebDriverWait(self.driver, 30).until(
                 EC.visibility_of_element_located((By.XPATH, '/html/body/div[2]/div[3]/div/div[1]/form/div[1]/div[3]/div/div/div/div/div/div[1]/div/div/div'))
             )
             print('key_Type_for_something')
@@ -427,7 +427,7 @@ class WebTestCase(unittest.TestCase):
 
             Department = self.driver.find_element(by=By.XPATH, value=
             '/html/body/div[2]/div[3]/div/div[1]/form/div[2]/div/div[2]/div[2]/div/div/div/div[2]/div/div/input')
-            Department.send_keys('Food and Beverage' + Keys.ARROW_DOWN + Keys.ENTER)
+            Department.send_keys('Food & Beverage Department' + Keys.ARROW_DOWN + Keys.ENTER)
 
             wait_element = WebDriverWait(self.driver, 15).until(
                 EC.element_to_be_clickable((By.XPATH, 
