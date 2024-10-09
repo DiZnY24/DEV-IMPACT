@@ -27,12 +27,12 @@ def delete_event(driver):
 
             element = WebDriverWait(driver, 15).until(
                 EC.visibility_of_element_located((By.XPATH, 
-            '/html/body/div/div/main/div/div/div[2]/div/div/div[1]/table/tbody/tr[1]/td[6]/p/div/button[5]'))
+            '/html/body/div[1]/div/main/div/div/div[2]/div/div/div[1]/table/tbody/tr[1]/td[7]/p/div/button[5]'))
             )
             print('รอปุ่ม Delete จนปรากฏขึ้น : Pass')
 
             Delete = driver.find_element(By.XPATH, 
-            '/html/body/div/div/main/div/div/div[2]/div/div/div[1]/table/tbody/tr[1]/td[6]/p/div/button[5]')
+            '/html/body/div[1]/div/main/div/div/div[2]/div/div/div[1]/table/tbody/tr[1]/td[7]/p/div/button[5]')
             assert Delete.is_displayed(), 'Element is not displayed!'
             assert Delete.is_enabled(), 'Element is not enabled!'
             Delete.click()

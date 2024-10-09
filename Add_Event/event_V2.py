@@ -351,7 +351,7 @@ def add_event(driver):
 
         Company = driver.find_element(by=By.XPATH, value=
         '/html/body/div[2]/div[3]/div/div[1]/form/div[2]/div/div[2]/div[1]/div/div/div/div[2]/div/div/input')
-        Company.send_keys('TEST Company' + Keys.ARROW_DOWN + Keys.ENTER)   
+        Company.send_keys('บริษัท บางกอกแลนด์ เอเจนซี่ จำกัด' + Keys.ARROW_DOWN + Keys.ENTER)   
 
 
         wait_element = WebDriverWait(driver, 10).until(
@@ -362,7 +362,7 @@ def add_event(driver):
     
         Department = driver.find_element(by=By.XPATH, value=
         '/html/body/div[2]/div[3]/div/div[1]/form/div[2]/div/div[2]/div[2]/div/div/div/div[2]/div/div/input')
-        Department.send_keys('City Management Department' + Keys.ARROW_DOWN + Keys.ENTER)
+        Department.send_keys('TEST Department' + Keys.ARROW_DOWN + Keys.ENTER)
 
 
         wait_element = WebDriverWait(driver, 30).until(

@@ -32,8 +32,8 @@ class WebTestCase(unittest.TestCase):
             print('--------------------------------')
         else:
             print('Fail')
-                # break
-            # pass
+        #         # break
+        #     # pass
         
         delete_event(self.driver) # ลบ Events 
         if delete_event:
