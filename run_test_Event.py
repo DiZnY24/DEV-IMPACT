@@ -5,6 +5,7 @@ from Login_Impact.login_Impact import login_impact
 from Login_fail.Login_fail_V2 import login_fail
 from v2.TC_1_Add_Event.event_V2 import add_event
 from v2.TC_3_Manage_Event.Edit_Event import edit_event
+from v2.TC_3_Manage_Event.Edit_2 import edit_event2 
 from v2.TC_2_Delete.delete_event_V2 import delete_event
 
 
@@ -28,11 +29,11 @@ class WebTestCase(unittest.TestCase):
             print('Fail')
 
         # for i in range(4):
-        # add_event(self.driver) # สร้าง Events ฟิล
-        # if add_event:
-        #     print('--------------------------------')
-        # else:
-        #     print('Fail')
+        add_event(self.driver) # สร้าง Events ฟิล
+        if add_event:
+            print('--------------------------------')
+        else:
+            print('Fail')
         # #         # break
         # #     # pass
         
@@ -42,13 +43,14 @@ class WebTestCase(unittest.TestCase):
         # else:
         #     print('Fail')
 
-        edit_event(self.driver) # Manage Event แก้ไข
-        if edit_event:
+        edit_event2(self.driver) # Manage Event แก้ไข
+        if edit_event2:
             print('--------------------------------')
         else:
             print('Fail')
-
         
+
+
 
        
         # คุณสามารถเพิ่มการตรวจสอบผลลัพธ์ที่นี่ เช่น assertIn

@@ -14,7 +14,7 @@ import sys
 from selenium.webdriver.common.action_chains import ActionChains
 
 
-def edit_event(driver):
+def edit_event2(driver):
 
     result = None
     try: 
@@ -54,13 +54,10 @@ def edit_event(driver):
         pyautogui.moveTo(x=483, y=523)
         time.sleep(0.3)
         pyautogui.click(x=483, y=523)
-        # # pyautogui.click(x=743, y=445)
         time.sleep(0.2)
         pyautogui.click(x=642, y=437)
         pyautogui.press('enter')
-        # time.sleep(3)
-        # current_position = pyautogui.position()
-        # print(f"The current mouse position is: {current_position}")
+
         
     except ArithmeticError as e:
         driver.fail(f'ตรวจสอบไม่สำเร็จ' + str(e))
@@ -144,12 +141,26 @@ def edit_event(driver):
         assert start_date.is_enabled(), 'Element is not enabled!'
         date_28.click()  
 
-        # autogui เลือกเวลา วันที่เริ่ม
-        pyautogui.moveTo(x=640, y=656) 
-        pyautogui.scroll(-4)
+         # autogui เลือกเวลา วันที่เริ่ม
+        pyautogui.moveTo(x=452, y=661) 
         time.sleep(0.5)
-        pyautogui.click(x=640, y=656)
-        pyautogui.click(x=696, y=616)
+        pyautogui.click(x=452, y=661)
+
+        # คลิกกรอบเวลา
+        click_time = driver.find_element(By.XPATH, '/html/body/div[4]/div[2]/div/div[1]/div/div[2]/ul[1]').click()        
+
+        select_time = driver.find_element(By.XPATH, '/html/body/div[4]/div[2]/div/div[1]/div/div[2]/ul[1]/li[11]')
+        actions = ActionChains(driver)
+        actions.move_to_element(select_time).click().perform()
+        time.sleep(1)
+
+        # คลิกกรอบเวลา
+        click_time = driver.find_element(By.XPATH, '/html/body/div[4]/div[2]/div/div[1]/div/div[2]/ul[2]').click()        
+
+        select_time = driver.find_element(By.XPATH, '/html/body/div[4]/div[2]/div/div[1]/div/div[2]/ul[2]/li[1]')
+        actions = ActionChains(driver)
+        actions.move_to_element(select_time).click().perform()
+        time.sleep(0.5)
 
         if start_date:
             print('คลิกเลือกวันที่เริ่มต้นสำเร็จ : Pass')
@@ -170,12 +181,26 @@ def edit_event(driver):
         assert start_date.is_enabled(), 'Element is not enabled!'
         date_29.click()  
 
-        # autogui เลือกเวลา วันที่สิ้นสุด
-        pyautogui.moveTo(x=995, y=534) 
-        pyautogui.scroll(5)
+        # autogui เลือกเวลา วันที่จบ
+        pyautogui.moveTo(x=845, y=646) 
         time.sleep(0.5)
-        pyautogui.click(x=995, y=534)
-        pyautogui.click(x=1050, y=534 )
+        pyautogui.click(x=845, y=646)
+
+        # คลิกกรอบเวลา
+        click_time = driver.find_element(By.XPATH, '/html/body/div[4]/div[2]/div/div[1]/div/div[2]/ul[1]').click()        
+
+        select_time = driver.find_element(By.XPATH, '/html/body/div[4]/div[2]/div/div[1]/div/div[2]/ul[1]/li[11]')
+        actions = ActionChains(driver)
+        actions.move_to_element(select_time).click().perform()
+        time.sleep(1)
+
+        # คลิกกรอบเวลา
+        click_time = driver.find_element(By.XPATH, '/html/body/div[4]/div[2]/div/div[1]/div/div[2]/ul[2]').click()        
+
+        select_time = driver.find_element(By.XPATH, '/html/body/div[4]/div[2]/div/div[1]/div/div[2]/ul[2]/li[1]')
+        actions = ActionChains(driver)
+        actions.move_to_element(select_time).click().perform()
+        time.sleep(0.5)
 
         if End_date:
             print('คลิกเลือกวันที่สิ้นสุดต้นสำเร็จ : Pass')
@@ -196,12 +221,26 @@ def edit_event(driver):
         assert start_date.is_enabled(), 'Element is not enabled!'
         date_30.click()  
 
-        # autogui เลือกเวลา วันที่แผร่เผย
-        pyautogui.moveTo(x=1345, y=537) 
-        pyautogui.scroll(4)
+        # autogui เลือกเวลา วันที่จบ
+        pyautogui.moveTo(x=1159, y=648) 
         time.sleep(0.5)
-        pyautogui.click(x=1345, y=537)
-        pyautogui.click(x=1402, y=583)
+        pyautogui.click(x=1159, y=648)
+
+        # คลิกกรอบเวลา
+        click_time = driver.find_element(By.XPATH, '/html/body/div[4]/div[2]/div/div[1]/div/div[2]/ul[1]').click()        
+
+        select_time = driver.find_element(By.XPATH, '/html/body/div[4]/div[2]/div/div[1]/div/div[2]/ul[1]/li[11]')
+        actions = ActionChains(driver)
+        actions.move_to_element(select_time).click().perform()
+        time.sleep(1)
+
+        # คลิกกรอบเวลา
+        click_time = driver.find_element(By.XPATH, '/html/body/div[4]/div[2]/div/div[1]/div/div[2]/ul[2]').click()        
+
+        select_time = driver.find_element(By.XPATH, '/html/body/div[4]/div[2]/div/div[1]/div/div[2]/ul[2]/li[1]')
+        actions = ActionChains(driver)
+        actions.move_to_element(select_time).click().perform()
+        time.sleep(0.5)    
 
         if port_date:
             print('คลิกเลือกวันที่แผร่เผยสำเร็จ : Pass')
@@ -239,6 +278,7 @@ def edit_event(driver):
             EC.visibility_of_element_located((By.XPATH, '/html/body/div[4]/div[3]/ul/li[1]'))
         )
         print('รอจนสามารถพิมได้ : Event')
+        time.sleep(0.5)
 
         event = driver.find_element(By.XPATH, '/html/body/div[4]/div[3]/ul/li[1]')
         assert event.is_displayed(), 'Element is not displayed!'
@@ -263,15 +303,6 @@ def edit_event(driver):
     time.sleep(1)
     
     try:    
-        # add_tags = driver.find_element(By.XPATH, '/html/body/div[2]/div[3]/div/div[1]/form/div[1]/div[7]/div/button')
-        # assert add_tags.is_displayed(), 'Element is not displayed!'
-        # assert add_tags.is_enabled(), 'Element is not enabled!'
-        # add_tags.click()
-
-        # if add_tags:
-        #     print('คลิก Add Tage สำเร็จ : Pass')
-        # else:
-        #     print('คลิก Add Tage ไม่สำเร็จ : Fail')
 
         wait_element = WebDriverWait(driver, 30).until(
             EC.visibility_of_element_located((By.XPATH, '/html/body/div[2]/div[3]/div/div[1]/form/div[1]/div[7]/div[2]/div[1]/div/div/div/div[2]/div/div/input'))
@@ -293,7 +324,7 @@ def edit_event(driver):
 
         creditAmount = driver.find_element(by=By.XPATH, value='/html/body/div[2]/div[3]/div/div[1]/form/div[1]/div[7]/div[2]/div[2]/div/div[2]/div/div/input')
         creditAmount.send_keys(Keys.COMMAND + 'a' + Keys.DELETE)
-        creditAmount.send_keys('2')
+        creditAmount.send_keys('5')
 
         input_key = driver.find_element(By.XPATH, '/html/body/div[2]/div[3]/div/div[1]/form/div[1]/div[7]/div[2]/div[2]/div/div[2]/div/div/input')
         input_value = input_key.get_attribute('value')
@@ -322,20 +353,20 @@ def edit_event(driver):
                 print('คลิกเลือกวันที่ 30 ไม่สำเร็จ : Pass')
         else:
             print('คลิกเลือกวันที่หมดอายุเครดิตไม่สำเร็จ : Fail')
-        # วันคลิกวันที่ 20
-        pyautogui.click(x=1066, y=473)
 
-        # # autogui เลือกเวลา อายุเครดิต
-        pyautogui.moveTo(x=1255, y=373) 
-        pyautogui.scroll(4)
+        # autogui เลือกเวลา วันที่อายุเครดิต
+        pyautogui.moveTo(x=1068, y=471) 
         time.sleep(0.5)
-        pyautogui.click(x=1266, y=373)
-        pyautogui.click(x=1310, y=372)
-        
-        # # time.sleep(3)
-        # # current_position = pyautogui.position()
-        # # print(f"The current mouse position is: {current_position}")
-        # time.sleep(0.3)
+        pyautogui.click(x=1068, y=471)
+
+        # select time
+        pyautogui.moveTo(x=1254, y=275)
+        time.sleep(0.5)
+        pyautogui.click(x=1254, y=275)
+        time.sleep(0.5)
+        pyautogui.moveTo(x=1315, y=270)
+        time.sleep(0.5)
+        pyautogui.click(x=1315, y=270)
 
     except ArithmeticError as e:
         driver.fail(f'ตรวจสอบไม่สำเร็จ: {e}')
@@ -345,18 +376,10 @@ def edit_event(driver):
         driver.fail(f'เงื่อนไขไม่ตรงตามที่คาดหวัง: {n}')
     except TimeoutException:
         driver.fail('การรอองค์ประกอบล้มเหลว')
-    
-
 
     try:
 
-        # Add_Permissions = driver.find_element(By.XPATH, '/html/body/div[2]/div[3]/div/div[1]/form/div[2]/div/div[1]/button')
-        # assert Add_Permissions.is_displayed(), 'Element is not displayed!'
-        # assert Add_Permissions.is_enabled(), 'Element is not enabled!'
-        # Add_Permissions.click()
-
-
-        element_2 = driver.find_element(By.XPATH, "/html/body/div[2]/div[3]/div/div[1]/form/div[2]/div/div[2]/div[1]/div/div/div/div[2]/div/div/input")
+        element_2 = driver.find_element(By.XPATH, "/html/body/div[2]/div[3]/div/div[1]/form/button")
         driver.execute_script("arguments[0].scrollIntoView(true);", element_2)
         time.sleep(1)
 
@@ -384,7 +407,7 @@ def edit_event(driver):
         Department.send_keys('City Management Department' + Keys.ARROW_DOWN + Keys.ENTER)
 
 
-        wait_element = WebDriverWait(driver, 30).until(
+        wait_element = WebDriverWait(driver, 60).until(
             EC.element_to_be_clickable((By.XPATH, 
         '/html/body/div[2]/div[3]/div/div[1]/form/div[2]/div/div[2]/div[3]/div/div/div/div[2]/div/div/input'))
         )
@@ -395,11 +418,12 @@ def edit_event(driver):
         time.sleep(0.5)
         pyautogui.doubleClick(x=1014, y=872)
         time.sleep(0.3)
-        
+
+
         levels = driver.find_element(by=By.XPATH, value=
         '/html/body/div[2]/div[3]/div/div[1]/form/div[2]/div/div[2]/div[3]/div/div/div/div[2]/div/div/input')
         levels.send_keys('5' + Keys.ARROW_UP + Keys.ENTER + Keys.ESCAPE)
-        time.sleep(0.5)
+        time.sleep(0.7)
         levels.send_keys('1' + Keys.ARROW_DOWN + Keys.ENTER + Keys.ESCAPE)
 
 
@@ -419,21 +443,21 @@ def edit_event(driver):
         )
         print('รอจนสร้าง Event สำเร็จ : Pass')
 
-        # try:
-        #     check = driver.find_element(By.XPATH, '/html/body/div/div/main/div/div/div[2]/div/div/div[1]/table/tbody/tr[1]/td[3]/p')
-        #     if check.text == 'ACTIVITY':
-        #         print('ข้อความถูกต้อง!!')
-        #     elif check.text == 'ACTIVITY ผิดพลาด':
-        #         print('ข้อความเป็นอีกแบบ')
-        #     else:
-        #         print('ข้อความไม่ตรงกับเงื่อนไขใด ๆ')
-        #         # sys.exit(1)
-        # except Exception:
-        #     print(False)
+        try:
+            check = driver.find_element(By.XPATH, '/html/body/div/div/main/div/div/div[2]/div/div/div[1]/table/tbody/tr[1]/td[3]/p')
+            if check.text == 'ACTIVITY':
+                print('ข้อความถูกต้อง!!')
+            elif check.text == 'ACTIVITY ผิดพลาด':
+                print('ข้อความเป็นอีกแบบ')
+            else:
+                print('ข้อความไม่ตรงกับเงื่อนไขใด ๆ')
+                # sys.exit(1)
+        except Exception:
+            print(False)
         # finally:
             # driver.quit()
 
-    #     time.sleep(3)
+        time.sleep(3)
     
     except NoSuchElementException as o:
         driver.fail(f'ไม่พบองค์ประกอบของ Elenemt')
